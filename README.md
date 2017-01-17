@@ -1,15 +1,13 @@
 # RimGen
-RimWorld stat generator
+Генерилка статов для RimWorld / RimWorld stat generator
 
-Генерилка статов для RimWorld
-
-Скачать exe
+Скачать exe / Download exe
 [RimGen_1.0.exe](https://github.com/ggdiam/RimGen/blob/master/RimGen_1.0.exe?raw=true)
 
-Скачать zip
+Скачать zip / Download zip
 [RimGen_1.0.zip](https://github.com/ggdiam/RimGen/blob/master/RimGen_1.0.zip?raw=true)
 
-### Внимание! Генерилка работает только если игра запущена в 1920x1080.
+### Внимание! RimGen работает только если игра запущена в 1920x1080. / Attention! RimGen works only game run in 1920x1080
 
 ### Как пользоваться:
 
