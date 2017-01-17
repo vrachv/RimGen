@@ -9,6 +9,8 @@ RimWorld stat generator
 Скачать zip
 [RimGen_1.0.zip](https://github.com/ggdiam/RimGen/blob/master/RimGen_1.0.zip?raw=true)
 
+### Внимание! Генерилка работает только если игра запущена в 1920x1080.
+
 ### Как пользоваться:
 
 Запускаем RimWorld, доходим до окна генерации персонажей.
