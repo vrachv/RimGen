@@ -1,0 +1,2 @@
+# RimGen
+RimWorld stat generator
