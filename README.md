@@ -8,7 +8,7 @@
 [RimGen_1.0.zip](https://github.com/ggdiam/RimGen/blob/master/RimGen_1.0.zip?raw=true)
 
 ### Внимание! RimGen работает только если игра запущена в 1920x1080.
-### Attention! RimGen works only game run in 1920x1080
+### Attention! RimGen works only if game run in 1920x1080
 
 ### Как пользоваться:
 
