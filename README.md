@@ -10,6 +10,8 @@
 ### Внимание! RimGen работает только если игра запущена в 1920x1080
 ### Attention! RimGen works only if game run in 1920x1080
 
+### Video [https://www.youtube.com/watch?v=oHR9Hhww5HM](https://www.youtube.com/watch?v=oHR9Hhww5HM) 
+
 ### Как пользоваться:
 
 Запускаем RimWorld, доходим до окна генерации персонажей.
