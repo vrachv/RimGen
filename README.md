@@ -28,3 +28,19 @@
 
 ![RimGen Screenshot](https://github.com/ggdiam/RimGen/blob/master/RimGen_1.0.png?raw=true)
 
+
+### Usage:
+
+Run RimWorld, go to character creation.
+
+Run RimGen, set attributes - press "Generate".
+
+To interrupt RimGen - Alt+Tab from game.
+
+Generation takes max 5 minutes. After that it stops.
+
+All the best!) Game is awesome! Gamedevs - respect!
+
+![RimWorld Screenshot](https://github.com/ggdiam/RimGen/blob/master/rim_gen_Shooting-10_Crafting-10__18.01.2017_14.54.39.png?raw=true)
+
+![RimGen Screenshot](https://github.com/ggdiam/RimGen/blob/master/RimGen_en.png?raw=true)
