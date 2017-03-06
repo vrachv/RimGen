@@ -77,7 +77,11 @@ namespace RimGen.Lib
 
                     if (conditionsSucceed == conditions.Count)
                     {
-                        SaveScreenForConditions(screen, conditions);
+                        if (Form1.SaveScreen)
+                        {
+                            SaveScreenForConditions(screen, conditions);
+                        }
+                        
                         resultMsg = Form1.Lang == "ru" ? "Готово" : "Done";
                         break;
                     }

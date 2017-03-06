@@ -16,6 +16,7 @@ namespace RimGen
     public partial class Form1 : Form
     {
         public static string Lang = "";
+        public static bool SaveScreen = true;
 
         private const string SETTINGS_FILE_NAME = "settings.config";
 
@@ -62,6 +63,9 @@ namespace RimGen
         {
             var result = "";
 
+            //screen
+            result += $"screen:{Form1.SaveScreen};";
+
             //lang
             result += $"lang:{Form1.Lang};";
 
@@ -98,6 +102,8 @@ namespace RimGen
             {
                 rbEn.Checked = true;
             }
+
+            chkbScreen.Checked = Form1.SaveScreen;
         }
 
         private List<Condition> LoadSettings()
@@ -118,6 +124,14 @@ namespace RimGen
                             if (prms[0] == "lang")
                             {
                                 Form1.Lang = prms[1];
+                            }
+                            else if (prms[0] == "screen")
+                            {
+                                var saveScreen = false;
+                                if (bool.TryParse(prms[1], out saveScreen))
+                                {
+                                    Form1.SaveScreen = saveScreen;
+                                }
                             }
                             else
                             {
@@ -250,6 +264,11 @@ namespace RimGen
             }
 
             return "";
+        }
+
+        private void chkbScreen_CheckedChanged(object sender, EventArgs e)
+        {
+            Form1.SaveScreen = chkbScreen.Checked;
         }
     }
 }
