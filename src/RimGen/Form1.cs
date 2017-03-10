@@ -17,6 +17,7 @@ namespace RimGen
     {
         public static string Lang = "";
         public static bool SaveScreen = true;
+        public static bool FireAttr = true;
 
         private const string SETTINGS_FILE_NAME = "settings.config";
 
@@ -40,6 +41,16 @@ namespace RimGen
                 }
             }
         }
+
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        var cp = base.CreateParams;
+        //        cp.ExStyle |= 8;  // Turn on WS_EX_TOPMOST
+        //        return cp;
+        //    }
+        //}
 
         private void buttonGenerate_Click(object sender, EventArgs e)
         {
@@ -65,6 +76,9 @@ namespace RimGen
 
             //screen
             result += $"screen:{Form1.SaveScreen};";
+
+            //fire
+            result += $"fire:{Form1.FireAttr};";
 
             //lang
             result += $"lang:{Form1.Lang};";
@@ -104,6 +118,7 @@ namespace RimGen
             }
 
             chkbScreen.Checked = Form1.SaveScreen;
+            chkbFire.Checked = Form1.FireAttr;
         }
 
         private List<Condition> LoadSettings()
@@ -131,6 +146,14 @@ namespace RimGen
                                 if (bool.TryParse(prms[1], out saveScreen))
                                 {
                                     Form1.SaveScreen = saveScreen;
+                                }
+                            }
+                            else if (prms[0] == "fire")
+                            {
+                                var fireAttr = false;
+                                if (bool.TryParse(prms[1], out fireAttr))
+                                {
+                                    Form1.FireAttr = fireAttr;
                                 }
                             }
                             else
@@ -269,6 +292,11 @@ namespace RimGen
         private void chkbScreen_CheckedChanged(object sender, EventArgs e)
         {
             Form1.SaveScreen = chkbScreen.Checked;
+        }
+
+        private void chkbFire_CheckedChanged(object sender, EventArgs e)
+        {
+            Form1.FireAttr = chkbFire.Checked;
         }
     }
 }

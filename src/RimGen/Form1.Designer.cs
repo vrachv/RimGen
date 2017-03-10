@@ -57,6 +57,11 @@
             this.rbRu = new System.Windows.Forms.RadioButton();
             this.rbEn = new System.Windows.Forms.RadioButton();
             this.chkbScreen = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.chkbFire = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -342,11 +347,44 @@
             this.chkbScreen.UseVisualStyleBackColor = true;
             this.chkbScreen.CheckedChanged += new System.EventHandler(this.chkbScreen_CheckedChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RimGen.Properties.Resources.fire1;
+            this.pictureBox1.Location = new System.Drawing.Point(176, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 42;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::RimGen.Properties.Resources.fire2;
+            this.pictureBox2.Location = new System.Drawing.Point(195, 43);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.TabIndex = 43;
+            this.pictureBox2.TabStop = false;
+            // 
+            // chkbFire
+            // 
+            this.chkbFire.AutoSize = true;
+            this.chkbFire.Checked = true;
+            this.chkbFire.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkbFire.Location = new System.Drawing.Point(190, 67);
+            this.chkbFire.Name = "chkbFire";
+            this.chkbFire.Size = new System.Drawing.Size(15, 14);
+            this.chkbFire.TabIndex = 30;
+            this.chkbFire.UseVisualStyleBackColor = true;
+            this.chkbFire.CheckedChanged += new System.EventHandler(this.chkbFire_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(224, 402);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.chkbFire);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.chkbScreen);
             this.Controls.Add(this.rbEn);
             this.Controls.Add(this.rbRu);
@@ -382,7 +420,8 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RimGen 1.0 ©ggDiam";
-            this.TopMost = true;
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,6 +458,9 @@
         private System.Windows.Forms.RadioButton rbRu;
         private System.Windows.Forms.RadioButton rbEn;
         private System.Windows.Forms.CheckBox chkbScreen;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.CheckBox chkbFire;
     }
 }
 

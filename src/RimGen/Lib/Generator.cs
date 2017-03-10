@@ -26,8 +26,16 @@ namespace RimGen.Lib
         const int shootingTopOffset = 405;
         const int craftTopOffset = 675;
 
+        const int fire1LeftOffset = -13;//смещение 1 огонька влево
+        const int fire1TopOffset = 10;
+
+        const int fire2LeftOffset = -8;//смещение 2 огоньков влево
+        const int fire2TopOffset = 13;
+
         static Color setColor = Color.FromArgb(-12566206); //"{Name=ff404142, ARGB=(255, 64, 65, 66)}"
         static Color notSetColor = Color.FromArgb(-14013652); //"{Name=ff2a2b2c, ARGB=(255, 42, 43, 44)}"
+
+        static Color setFireColor = Color.FromArgb(-3229); //"{Name=fffff363, ARGB=(255, 255, 243, 99)}"
 
         public static string Generate(List<Condition> conditions, int maxSecondsTimeout = 30)
         {
@@ -68,10 +76,26 @@ namespace RimGen.Lib
                         int valueOffset = condition.MinValue == 0 ? 1 : (int)Math.Ceiling(condition.MinValue * 4.8);
                         int attrTopOffset = firstAttrTopOffset + ((int)condition.Attr * 27);
 
+                        //цвет навыка
                         var color = screen.GetPixel(leftOffset + valueOffset, attrTopOffset);
-                        if (color == setColor)
+
+                        //цвет огонька
+                        var fire1Color = screen.GetPixel(leftOffset + fire1LeftOffset, attrTopOffset + fire1TopOffset);
+                        var fire2Color = screen.GetPixel(leftOffset + fire2LeftOffset, attrTopOffset + fire2TopOffset);
+
+                        if (Form1.FireAttr)
                         {
-                            conditionsSucceed++;
+                            if (color == setColor && (fire1Color == setFireColor || fire2Color == setFireColor))
+                            {
+                                conditionsSucceed++;
+                            }
+                        }
+                        else
+                        {
+                            if (color == setColor)
+                            {
+                                conditionsSucceed++;
+                            }
                         }
                     }
 
