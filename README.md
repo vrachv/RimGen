@@ -1,11 +1,10 @@
 # RimGen
 Генерилка статов для RimWorld / RimWorld stat generator
 
-Скачать exe / Download exe
-[RimGen_1.0.exe](http://bit.ly/2jVj3Kj)
+В версии 1.1 можно задавать поиск аттрибутов с огоньками / In version 1.1 you can search attrs with fire
 
 Скачать zip / Download zip
-[RimGen_1.0.zip](http://bit.ly/2iDm54Y)
+[RimGen_1.1.zip](http://bit.ly/2n02RN3)
 
 ### Внимание! RimGen работает только если игра запущена в 1920x1080
 ### Attention! RimGen works only if game run in 1920x1080
@@ -26,7 +25,7 @@
 
 ![RimWorld Screenshot](https://github.com/ggdiam/RimGen/blob/master/rim_gen_Shooting-10__17.01.2017_13.51.07.png?raw=true)
 
-![RimGen Screenshot](https://github.com/ggdiam/RimGen/blob/master/RimGen_1.0.png?raw=true)
+![RimGen Screenshot](https://github.com/ggdiam/RimGen/blob/master/RimGen_1.1.png?raw=true)
 
 
 ### Usage:
@@ -43,4 +42,4 @@ All the best!) Game is awesome! Gamedevs - respect!
 
 ![RimWorld Screenshot](https://github.com/ggdiam/RimGen/blob/master/rim_gen_Shooting-10_Crafting-10__18.01.2017_14.54.39.png?raw=true)
 
-![RimGen Screenshot](https://github.com/ggdiam/RimGen/blob/master/RimGen_en.png?raw=true)
+![RimGen Screenshot](https://github.com/ggdiam/RimGen/blob/master/RimGen_1.1.png?raw=true)
