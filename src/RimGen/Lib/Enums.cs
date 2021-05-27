@@ -4,15 +4,15 @@
     {
         Shooting = 0,
         Melee,
-        Social,
-        Animals,
-        Medicine,
-        Cooking,
         Construction,
-        Growing,
         Mining,
-        Artistic,
+        Cooking,
+        Plants,
+        Animals,
         Crafting,
-        Research
+        Artistic,
+        Medicine,
+        Social,
+        Intellectual
     }
 }

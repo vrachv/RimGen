@@ -1,10 +1,6 @@
 # RimGen
-Генерилка статов для RimWorld / RimWorld stat generator
 
-В версии 1.1 можно задавать поиск аттрибутов с огоньками / In version 1.1 you can search attrs with fire
-
-Скачать zip / Download zip
-[RimGen_1.1.zip](http://bit.ly/2n02RN3)
+Forked from the original at https://github.com/ggdiam/RimGen
 
 ### Внимание! RimGen работает только если игра запущена в 1920x1080
 ### Attention! RimGen works only if game run in 1920x1080
@@ -21,11 +17,9 @@
 
 Сам процесс идет максимум 5 минут. Потом нужно запускать снова.
 
-Всем бобра!) Игруха огонь! Разрабы - распектос!
+![RimWorld Screenshot](https://github.com/vrachv/RimGen/blob/master/rim_gen_Shooting-10__17.01.2017_13.51.07.png?raw=true)
 
-![RimWorld Screenshot](https://github.com/ggdiam/RimGen/blob/master/rim_gen_Shooting-10__17.01.2017_13.51.07.png?raw=true)
-
-![RimGen Screenshot](https://github.com/ggdiam/RimGen/blob/master/RimGen_1.1.png?raw=true)
+![RimGen Screenshot](https://github.com/vrachv/RimGen/blob/master/RimGen_1.1.png?raw=true)
 
 
 ### Usage:
@@ -38,8 +32,6 @@ To interrupt RimGen - Alt+Tab from game.
 
 Generation takes max 5 minutes. After that it stops.
 
-All the best!) Game is awesome! Gamedevs - respect!
+![RimWorld Screenshot](https://github.com/vrachv/RimGen/blob/master/rim_gen_Shooting-10_Crafting-10__18.01.2017_14.54.39.png?raw=true)
 
-![RimWorld Screenshot](https://github.com/ggdiam/RimGen/blob/master/rim_gen_Shooting-10_Crafting-10__18.01.2017_14.54.39.png?raw=true)
-
-![RimGen Screenshot](https://github.com/ggdiam/RimGen/blob/master/RimGen_1.1.png?raw=true)
+![RimGen Screenshot](https://github.com/vrachv/RimGen/blob/master/RimGen_1.1.png?raw=true)

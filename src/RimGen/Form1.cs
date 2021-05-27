@@ -156,14 +156,17 @@ namespace RimGen
 
                                 if (int.TryParse(prms[0], out attr) && int.TryParse(prms[1], out value))
                                 {
-                                    conditions.Add(new Condition((AttributeEnum)attr, value));
+                                    conditions.Add(new Condition((AttributeEnum) attr, value));
                                 }
                             }
                         }
                     }
                 }
             }
-            catch { }
+            catch
+            {
+                // ignore
+            }
 
             return conditions;
         }
@@ -258,18 +261,18 @@ namespace RimGen
         {
             switch (attr)
             {
-                case AttributeEnum.Shooting: return Form1.Lang == "ru" ? "Стрельба" : "Shooting";
+                case AttributeEnum.Shooting: return Form1.Lang == "ru" ? "Дальний бой" : "Shooting";
                 case AttributeEnum.Melee: return Form1.Lang == "ru" ? "Ближний бой" : "Melee";
-                case AttributeEnum.Social: return Form1.Lang == "ru" ? "Общение" : "Social";
-                case AttributeEnum.Animals: return Form1.Lang == "ru" ? "Животноводство" : "Animals";
-                case AttributeEnum.Medicine: return Form1.Lang == "ru" ? "Медицина" : "Medicine";
-                case AttributeEnum.Cooking: return Form1.Lang == "ru" ? "Кулинария" : "Cooking";
                 case AttributeEnum.Construction: return Form1.Lang == "ru" ? "Строительство" : "Construction";
-                case AttributeEnum.Growing: return Form1.Lang == "ru" ? "Фермерство" : "Growing";
                 case AttributeEnum.Mining: return Form1.Lang == "ru" ? "Горное дело" : "Mining";
-                case AttributeEnum.Artistic: return Form1.Lang == "ru" ? "Искусство" : "Artistic";
+                case AttributeEnum.Cooking: return Form1.Lang == "ru" ? "Кулинария" : "Cooking";
+                case AttributeEnum.Plants: return Form1.Lang == "ru" ? "Растениеводство" : "Plants";
+                case AttributeEnum.Animals: return Form1.Lang == "ru" ? "Животноводство" : "Animals";
                 case AttributeEnum.Crafting: return Form1.Lang == "ru" ? "Ремесло" : "Crafting";
-                case AttributeEnum.Research: return Form1.Lang == "ru" ? "Исследование" : "Research";
+                case AttributeEnum.Artistic: return Form1.Lang == "ru" ? "Искусство" : "Artistic";
+                case AttributeEnum.Medicine: return Form1.Lang == "ru" ? "Медицина" : "Medicine";
+                case AttributeEnum.Social: return Form1.Lang == "ru" ? "Общение" : "Social";
+                case AttributeEnum.Intellectual: return Form1.Lang == "ru" ? "Умственный труд" : "Intellectual";
                 default: return "";
             }
         }
