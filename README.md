@@ -2,6 +2,8 @@
 
 Forked from the original at https://github.com/ggdiam/RimGen
 
+### Download / Скачать - https://github.com/vrachv/RimGen/releases/latest/download/RimGen.exe
+
 ### Внимание! RimGen работает только если игра запущена в 1920x1080
 ### Attention! RimGen works only if game run in 1920x1080
 
