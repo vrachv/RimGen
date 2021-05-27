@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RimGen.Lib
 {
@@ -23,8 +19,7 @@ namespace RimGen.Lib
             Maximize = 3, ShowNormalNoActivate = 4, Show = 5,
             Minimize = 6, ShowMinNoActivate = 7, ShowNoActivate = 8,
             Restore = 9, ShowDefault = 10, ForceMinimized = 11
-        };
-
+        }
 
         [DllImport("User32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -50,14 +45,13 @@ namespace RimGen.Lib
         public static void SendGenerateNew()
         {
             //ShowWindow(gameWindowHandle, ShowWindowEnum.Restore);
-            Clicker.ClickOnPoint(gameWindowHandle, new Point(940, 280));
+            Clicker.ClickOnPoint(gameWindowHandle, new Point(1357, 255));
         }
 
         public static void SaveScreenshot()
         {
             var bmp = GetScreenshot();
-
-            string screenshotPath = ("rimworld.bmp");
+            string screenshotPath = "rimworld.bmp";
             bmp.Save(screenshotPath, ImageFormat.Bmp);
             bmp.Dispose();
         }
@@ -67,18 +61,16 @@ namespace RimGen.Lib
             var rect = new Rectangle();
             GetWindowRect(gameWindowHandle, ref rect);
 
-            var bmp = new Bitmap(rect.Width, rect.Height);
+            var bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                IntPtr hdc = g.GetHdc();
-                PrintWindow(gameWindowHandle, hdc, 0);
-                g.ReleaseHdc(hdc);
+                g.CopyFromScreen(rect.Left, rect.Top, 0, 0, rect.Size);
             }
 
             return bmp;
         }
 
-        private static IntPtr GetWindowByName(string wName)
+        private static void GetWindowByName(string wName)
         {
             IntPtr hWnd = IntPtr.Zero;
             foreach (Process pList in Process.GetProcesses())
@@ -93,8 +85,6 @@ namespace RimGen.Lib
             if (hWnd == IntPtr.Zero) {
                 throw new Exception(Form1.Lang == "ru" ? "Ошибка! Окно с игрой не найдено" : "Error! Game window not found");
             }
-
-            return hWnd;
         }
     }
 }

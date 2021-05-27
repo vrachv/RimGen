@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace RimGen.Lib
 {
@@ -19,11 +16,11 @@ namespace RimGen.Lib
         const int height = 24;
         const int width = 24;
         const int topAttrStepHeight = 27;
-        const int leftOffset = 980;
+        const int leftOffset = 1029;
 
-        const int firstAttrTopOffset = 405;
+        const int firstAttrTopOffset = 336;
 
-        const int shootingTopOffset = 405;
+        const int shootingTopOffset = 336;
         const int craftTopOffset = 675;
 
         const int fire1LeftOffset = -13;//смещение 1 огонька влево
@@ -55,25 +52,25 @@ namespace RimGen.Lib
 
             while (DateTime.Now < startDate.AddSeconds(maxSecondsTimeout))
             {
-                Game.SendGenerateNew();
                 if (start)
                 {
-                    Thread.Sleep(100);
+                    Thread.Sleep(150);
                     start = false;
                 }
                 else
                 {
-                    Thread.Sleep(15);
+                    Thread.Sleep(50);
                 }
 
                 Bitmap screen = null;
+                
                 try
                 {
                     screen = Game.GetScreenshot();
                     var conditionsSucceed = 0;
                     foreach (var condition in conditions)
                     {
-                        int valueOffset = condition.MinValue == 0 ? 1 : (int)Math.Ceiling(condition.MinValue * 4.8);
+                        int valueOffset = condition.MinValue == 0 ? 1 : (int)Math.Ceiling(condition.MinValue * 3.8);
                         int attrTopOffset = firstAttrTopOffset + ((int)condition.Attr * 27);
 
                         //цвет навыка
@@ -109,18 +106,19 @@ namespace RimGen.Lib
                         resultMsg = Form1.Lang == "ru" ? "Готово" : "Done";
                         break;
                     }
+                    else
+                    {
+                        Game.SendGenerateNew();
+                    }
                 }
-                catch (Exception e)
+                catch
                 {
                     resultMsg = Form1.Lang == "ru" ? "Прервано" : "Interrupted";
                     break;
                 }
                 finally
                 {
-                    if (screen != null)
-                    {
-                        screen.Dispose();
-                    }
+                    screen?.Dispose();
                 }
 
                 //var craftColor = screen.GetPixel(leftOffset + 72, craftTopOffset);
@@ -148,8 +146,6 @@ namespace RimGen.Lib
                 //else
                 //{
                 //}
-
-                screen.Dispose();
             }
 
             return resultMsg;
@@ -162,7 +158,7 @@ namespace RimGen.Lib
             {
                 attrsString += $"{cond.Attr.ToString()}-{cond.MinValue}_";
             }
-            string screenshotPath = $"rim_gen_{attrsString}_{DateTime.Now.ToShortDateString()}_{DateTime.Now.ToString("HH.mm.ss")}.png";
+            string screenshotPath = $"rim_gen_{attrsString}_{DateTime.Now.ToShortDateString()}_{DateTime.Now:HH.mm.ss}.png";
             screen.Save(screenshotPath, ImageFormat.Png);
         }
     }

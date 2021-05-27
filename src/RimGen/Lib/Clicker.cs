@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RimGen.Lib
@@ -49,24 +45,24 @@ namespace RimGen.Lib
         {
             var oldPos = Cursor.Position;
 
-            /// get screen coordinates
+            // get screen coordinates
             ClientToScreen(wndHandle, ref clientPoint);
 
-            /// set cursor on coords, and press mouse
+            // set cursor on coords, and press mouse
             Cursor.Position = new Point(clientPoint.X, clientPoint.Y);
 
             var inputMouseDown = new INPUT();
-            inputMouseDown.Type = 0; /// input type mouse
-            inputMouseDown.Data.Mouse.Flags = 0x0002; /// left button down
+            inputMouseDown.Type = 0; // input type mouse
+            inputMouseDown.Data.Mouse.Flags = 0x0002; // left button down
 
             var inputMouseUp = new INPUT();
-            inputMouseUp.Type = 0; /// input type mouse
-            inputMouseUp.Data.Mouse.Flags = 0x0004; /// left button up
+            inputMouseUp.Type = 0; // input type mouse
+            inputMouseUp.Data.Mouse.Flags = 0x0004; // left button up
 
             var inputs = new INPUT[] { inputMouseDown, inputMouseUp };
             SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
 
-            /// return mouse 
+            // return mouse 
             //Cursor.Position = oldPos;
         }
 

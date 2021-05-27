@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RimGen.Lib
+﻿namespace RimGen.Lib
 {
-    public enum AttributeEnum : int
+    public enum AttributeEnum
     {
         Shooting = 0,
         Melee,

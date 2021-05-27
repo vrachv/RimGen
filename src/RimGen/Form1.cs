@@ -1,14 +1,10 @@
 ﻿using RimGen.Lib;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RimGen
@@ -61,7 +57,7 @@ namespace RimGen
             if (conditions.Count > 0)
             {
                 Log(Form1.Lang == "ru" ? "Генерим..." : "Generating...");
-                var resultMsg = Generator.Generate(conditions, 60 * 5);
+                var resultMsg = Generator.Generate(conditions, (int)TimeSpan.FromMinutes(5).TotalSeconds);
                 Log(resultMsg);
             }
             else
@@ -83,10 +79,7 @@ namespace RimGen
             //lang
             result += $"lang:{Form1.Lang};";
 
-            foreach (var cond in conditions)
-            {
-                result += $"{(int)cond.Attr}:{cond.MinValue};";
-            }
+            result = conditions.Aggregate(result, (current, cond) => current + $"{(int) cond.Attr}:{cond.MinValue};");
             File.WriteAllText(SETTINGS_FILE_NAME, result);
         }
 
@@ -128,7 +121,7 @@ namespace RimGen
             try
             {
                 var result = File.ReadAllText(SETTINGS_FILE_NAME);
-                if (result != null && result.Length > 0)
+                if (result.Length > 0)
                 {
                     var condList = result.Split(';');
                     foreach (var cond in condList)
@@ -170,7 +163,7 @@ namespace RimGen
                     }
                 }
             }
-            catch (Exception ex) { };
+            catch { }
 
             return conditions;
         }
@@ -244,14 +237,7 @@ namespace RimGen
 
         private void rb_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbRu.Checked)
-            {
-                Form1.Lang = "ru";
-            }
-            else
-            {
-                Form1.Lang = "en";
-            }
+            Form1.Lang = rbRu.Checked ? "ru" : "en";
             SetLang();
         }
 
@@ -284,9 +270,8 @@ namespace RimGen
                 case AttributeEnum.Artistic: return Form1.Lang == "ru" ? "Искусство" : "Artistic";
                 case AttributeEnum.Crafting: return Form1.Lang == "ru" ? "Ремесло" : "Crafting";
                 case AttributeEnum.Research: return Form1.Lang == "ru" ? "Исследование" : "Research";
+                default: return "";
             }
-
-            return "";
         }
 
         private void chkbScreen_CheckedChanged(object sender, EventArgs e)
